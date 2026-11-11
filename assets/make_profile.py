@@ -138,8 +138,7 @@ TECH = [("c", "C", "c-original.svg"), ("cpp", "C++", "cplusplus-original.svg"),
         ("x86", "x86 assembly", None), ("arm", "ARM assembly", None),
         ("bash", "Bash", "bash-original.svg"), ("python", "Python", "python-original.svg"),
         ("linux", "Linux", "linux-original.svg"), ("macos", "macOS", "apple-original.svg"),
-        ("raspberrypi", "Raspberry Pi", "raspberrypi-original.svg"), ("git", "Git", "git-original.svg"),
-        ("docker", "Docker", "docker-plain.svg"), ("linkedin", "LinkedIn", "linkedin-original.svg")]
+        ("linkedin", "LinkedIn", "linkedin-original.svg")]
 
 for name, title, file in TECH:
     if name == "x86":                              # x86 has no logo: the word, in ink

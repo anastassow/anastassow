@@ -1,4 +1,4 @@
-### Hi, I’m Dimitar Anastasov
+### Hi, I’m Dimitar Anastasov 👋
 
 **Systems programmer working on optimization: Systems for ML and ML for Systems.**
 
@@ -6,48 +6,37 @@
 <a href="https://linkedin.com/company/systems-society-bulgaria"><img src="https://img.shields.io/badge/System_Society_Bulgaria-0A7A5A?style=flat-square&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iNzUiIGhlaWdodD0iMjUiIGZpbGw9IiNmZmYiLz48cmVjdCB4PSIyNSIgeT0iMzcuNSIgd2lkdGg9Ijc1IiBoZWlnaHQ9IjI1IiBmaWxsPSIjZmZmIi8%2BPHJlY3QgeT0iNzUiIHdpZHRoPSI3NSIgaGVpZ2h0PSIyNSIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg%3D%3D" alt="System Society Bulgaria"></a>
 <a href="https://quicx.dev"><img src="https://img.shields.io/badge/quicx.dev-FF5700?style=flat-square" alt="quicx.dev"></a>
 
-I’m a final-year student at TUES. I like putting low-level knowledge, mathematics and machine learning together to build things that didn’t exist before. Right now I’m writing research papers on ML for Systems and testing the ideas inside my own engine, [Quicx](https://github.com/anastassow/Quicx).
+I’m a final-year student at TUES. I like putting low-level knowledge, mathematics and machine learning together to build things that didn’t exist before. Right now I’m writing research papers on ML for Systems and testing the ideas inside my own engine, Quicx.
 
-### Things I’ve built
+### What I work on
 
 <table>
 <tr>
 <td width="50%" valign="top">
-<sub><b>01</b>&ensp;Task queue engine in C</sub>
-<h3><a href="https://github.com/anastassow/Quicx">Quicx</a></h3>
-My own memory allocator and binary protocol. When memory is full, it keeps the most valuable work.
-<br><br>
-<a href="https://github.com/anastassow/Quicx"><img src="https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black" alt="C"></a>
-<a href="https://github.com/anastassow/Quicx"><img src="https://img.shields.io/badge/36_KB-on_a_Raspberry_Pi-A22846?style=flat-square&logo=raspberrypi&logoColor=white" alt="36 KB on a Raspberry Pi"></a>
+<sub><b>01</b>&ensp;ML for Systems</sub>
+<h3>A task queue with a hard memory limit</h3>
+<p><a href="https://github.com/anastassow/Quicx"><b>Quicx</b></a> is my own task queue engine in C, with its own memory allocator and binary protocol. It gets a memory budget and never goes past it: when memory is full, valuable tasks push out less valuable ones instead of the whole thing crashing.</p>
+<p>The program is 36 KB on a Raspberry Pi. Now I’m researching how it can learn by itself which tasks matter.</p>
 </td>
 <td width="50%" valign="top">
-<sub><b>02</b>&ensp;Training library in C++</sub>
-<h3><a href="https://github.com/Molikano/Sandokan">Sandokan</a></h3>
-Neural network training on the CPU, tuned for speed. No Python and no GPU needed.
-<br><br>
-<a href="https://github.com/Molikano/Sandokan"><img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white" alt="C++"></a>
-<a href="https://github.com/Molikano/Sandokan"><img src="https://img.shields.io/badge/On--device_learning-0A7A5A?style=flat-square" alt="On-device learning"></a>
+<sub><b>02</b>&ensp;Systems for ML</sub>
+<h3>Training neural networks on the CPU</h3>
+<p><a href="https://github.com/Molikano/Sandokan"><b>Sandokan</b></a> trains neural networks on the device itself, with no GPU and no Python, for robots and embedded systems that keep learning after they ship.</p>
+<p>Its memory comes from <a href="https://github.com/anastassow/PMAD"><b>PMAD</b></a>, my slab allocator in C: one pool reserved at start, every allocation O(1), no system calls on the hot path.</p>
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
-<sub><b>03</b>&ensp;Documentation engine</sub>
-<h3><a href="https://github.com/IBM-SUMMER-PRACTICE-2026/ZDoc">ZDoc</a></h3>
-Optimized documentation for mainframe and modern code, built at the IBM summer practice.
-<br><br>
-<a href="https://github.com/IBM-SUMMER-PRACTICE-2026/ZDoc"><img src="https://img.shields.io/badge/PL%2FX-052FAD?style=flat-square&logo=ibm&logoColor=white" alt="PL/X"></a>
-<a href="https://github.com/IBM-SUMMER-PRACTICE-2026/ZDoc"><img src="https://img.shields.io/badge/Assembler-4C5953?style=flat-square" alt="Assembler"></a>
-<a href="https://github.com/IBM-SUMMER-PRACTICE-2026/ZDoc"><img src="https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black" alt="C"></a>
-<a href="https://github.com/IBM-SUMMER-PRACTICE-2026/ZDoc"><img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white" alt="C++"></a>
-<a href="https://github.com/IBM-SUMMER-PRACTICE-2026/ZDoc"><img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java"></a>
+<sub><b>03</b>&ensp;Developer tools</sub>
+<h3>Documentation for mainframe code</h3>
+<p><a href="https://github.com/IBM-SUMMER-PRACTICE-2026/ZDoc"><b>ZDoc</b></a> reads PL/X, C, C++ and Java and turns the doc comments into browsable Markdown or HTML, like Doxygen for mixed mainframe codebases.</p>
+<p>There was no maintained open-source documentation generator for PL/X, so we built one at the IBM summer practice.</p>
 </td>
 <td width="50%" valign="top">
-<sub><b>04</b>&ensp;Also</sub>
-<h3>Compilers and robotics</h3>
-A compiler for a C-style language, and autonomous robots with on-board vision and machine learning.
-<br><br>
-<img src="https://img.shields.io/badge/Lexers_and_parsers-4C5953?style=flat-square" alt="Lexers and parsers">
-<img src="https://img.shields.io/badge/Computer_vision-0A7A5A?style=flat-square" alt="Computer vision">
+<sub><b>04</b>&ensp;Compilers and robotics</sub>
+<h3>A compiler, and the robot that started Quicx</h3>
+<p>I wrote a compiler for a C-style language, and worked on an autonomous robot that finds plant diseases with on-board vision and machine learning.</p>
+<p>The model was slower than the cameras, the robot ran out of memory in the middle of a field and stopped. That is the problem Quicx solves.</p>
 </td>
 </tr>
 </table>
@@ -77,19 +66,16 @@ I founded System Society Bulgaria for people who want to take systems programmin
 <tr>
 <td valign="top" width="160"><b>Main technologies</b></td>
 <td>
-<img src="assets/tech/c.svg" width="40" title="C" alt="C">
-<img src="assets/tech/cpp.svg" width="40" title="C++" alt="C++">
-<img src="assets/tech/x86.svg" width="40" title="x86 assembly" alt="x86 assembly">
-<img src="assets/tech/arm.svg" width="40" title="ARM assembly" alt="ARM assembly">
-<img src="assets/tech/bash.svg" width="40" title="Bash" alt="Bash">
-<img src="assets/tech/python.svg" width="40" title="Python" alt="Python">
-<img src="assets/tech/linux.svg" width="40" title="Linux" alt="Linux">
-<img src="assets/tech/macos.svg" width="40" title="macOS" alt="macOS">
-<img src="assets/tech/raspberrypi.svg" width="40" title="Raspberry Pi" alt="Raspberry Pi">
-<img src="assets/tech/git.svg" width="40" title="Git" alt="Git">
-<img src="assets/tech/docker.svg" width="40" title="Docker" alt="Docker">
+<img src="assets/tech/c.svg" width="48" title="C" alt="C">
+<img src="assets/tech/cpp.svg" width="48" title="C++" alt="C++">
+<img src="assets/tech/x86.svg" width="48" title="x86 assembly" alt="x86 assembly">
+<img src="assets/tech/arm.svg" width="48" title="ARM assembly" alt="ARM assembly">
+<img src="assets/tech/bash.svg" width="48" title="Bash" alt="Bash">
+<img src="assets/tech/python.svg" width="48" title="Python" alt="Python">
+<img src="assets/tech/linux.svg" width="48" title="Linux" alt="Linux">
+<img src="assets/tech/macos.svg" width="48" title="macOS" alt="macOS">
 <br>
-<sub>C, C++, x86 and ARM assembly, Bash, Python, Linux, macOS, Raspberry Pi, Git, Docker</sub>
+<sub>C, C++, x86 and ARM assembly, Bash, Python, Linux, macOS</sub>
 </td>
 </tr>
 </table>
