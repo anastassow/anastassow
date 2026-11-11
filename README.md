@@ -7,7 +7,7 @@ I'm a systems programmer, and what I care about most is optimization, Systems fo
 
 I've built my own task queue engine, [Quicx](https://github.com/anastassow/Quicx), with its own memory allocator and its own protocol, and a CPU training library, [Sandokan](https://github.com/Molikano/Sandokan), tuned for speed. I've also worked on compilers, robotics and an optimized documentation engine, [ZDoc](https://github.com/IBM-SUMMER-PRACTICE-2026/ZDoc). Right now I'm writing research papers on ML for Systems, testing the ideas inside Quicx.
 
-I founded Systems Society Bulgaria, a community for people who want to push systems programming further, into business, ML, reinforcement learning and quantum computing. That is where most of my interest is.
+I founded [Systems Society Bulgaria](https://linkedin.com/company/systems-society-bulgaria), a community for people who want to push systems programming further, into business, ML, reinforcement learning and quantum computing. That is where most of my interest is. Our events are on [Luma](https://luma.com/systems-society-bulgaria).
 
 Before this I owned a service company and worked as a product owner. I can also build web, mobile and desktop apps and set up infrastructure and networks. It isn't my passion anymore, but it comes in handy.
 
@@ -24,10 +24,8 @@ Before this I owned a service company and worked as a product owner. I can also 
   <img src="https://img.shields.io/badge/Optimization-0A7A5A?style=flat-square" alt="Optimization">
 </p>
 
-### Tools
+### Main technologies
 
-<img src="https://skillicons.dev/icons?i=c,cpp,java,py,ts,js,bash" alt="C, C++, Java, Python, TypeScript, JavaScript, Bash"><br>
-<img src="https://skillicons.dev/icons?i=linux,apple,raspberrypi,docker,cmake,git,githubactions" alt="Linux, macOS, Raspberry Pi, Docker, CMake, Git, GitHub Actions"><br>
-<img src="https://skillicons.dev/icons?i=pytorch,opencv,sklearn,react,nextjs,spring,django,fastapi,postgres" alt="PyTorch, OpenCV, scikit-learn, React, Next.js, Spring, Django, FastAPI, PostgreSQL">
+<img src="assets/tech.png" height="48" alt="C, C++, Bash, Python, Linux, macOS, Raspberry Pi, Git, Docker, x86 assembly, ARM assembly">
 
 You can find me on [LinkedIn](https://www.linkedin.com/in/dimitar-anastasov-339a94310/).
