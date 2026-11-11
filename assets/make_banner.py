@@ -5,7 +5,7 @@ banner, in the colours of System Society Bulgaria (night ground, Displaced
 Green). Draws with Quicx's diagram code:
 
     python3 assets/make_banner.py ~/Desktop/Quicx-adaptive/docs/report/scripts
-    rsvg-convert -z 2 assets/banner-dark.svg -o assets/banner-dark.png   (and light)
+    rsvg-convert -z 2 assets/banner-dark.svg -o assets/banner-2-dark.png   (and light)
 """
 import os
 import sys

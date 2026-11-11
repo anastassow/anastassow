@@ -1,6 +1,6 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.png">
-  <img src="assets/banner-light.png" alt="Hi, I'm Dimitar Anastasov. Systems programmer: optimization, Systems for ML and ML for Systems. Final-year student at TUES, founder of System Society Bulgaria." width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-2-dark.png">
+  <img src="assets/banner-2-light.png" alt="Hi, I'm Dimitar Anastasov. Systems programmer: optimization, Systems for ML and ML for Systems. Final-year student at TUES, founder of System Society Bulgaria." width="100%">
 </picture>
 
 I'm a systems programmer. I like putting low-level knowledge, mathematics and machine learning together to build things that didn't exist before, and I'm writing research papers on ML for Systems, testing the ideas inside my own engine, Quicx.
