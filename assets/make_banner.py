@@ -26,11 +26,11 @@ PAPER = dict(LIGHT, bg="#ffffff", panel="#f8fbfa", panel2="#e3e7e6", line="#d0d6
 
 def banner(pal):
     c = Canvas(pal, 1600, 420)
-    c.text(80, 150, "Dimitar Anastasov", size=66, weight=700, color="text")
-    c.rect(82, 178, 72, 5, fill="accent", stroke=None, rx=2)
-    c.text(80, 238, "Systems programming, ML for Systems and Systems for ML.", size=27, color="body")
-    c.text(80, 280, "Final-year student at TUES. Founder of Systems Society Bulgaria.", size=22, color="muted")
-    c.text(80, 360, "Sofia  ·  C  ·  C++  ·  Python  ·  research", size=17, mono=True, color="dim")
+    c.text(82, 104, "Hi, I'm", size=24, mono=True, color="accent_text")
+    c.text(80, 172, "Dimitar Anastasov", size=66, weight=700, color="text")
+    c.text(80, 236, "Systems programmer: optimization, Systems for ML and ML for Systems.", size=26, color="body")
+    c.text(80, 278, "Final-year student at TUES. Founder of Systems Society Bulgaria.", size=22, color="muted")
+    c.text(80, 356, "Sofia  ·  C  ·  C++  ·  Python  ·  research", size=17, mono=True, color="dim")
 
     # memory pages, as in the Quicx diagrams: in use (finer grid = smaller blocks), warm, cold
     kinds = ["u6", "u6", "u3", "u6", "hl", "w", "u6", "u3",

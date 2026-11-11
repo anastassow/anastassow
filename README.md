@@ -3,13 +3,13 @@
   <img src="assets/banner-light.png" alt="Dimitar Anastasov: systems programming, ML for Systems and Systems for ML. Final-year student at TUES, founder of Systems Society Bulgaria." width="100%">
 </picture>
 
-I'm a final-year student at TUES in Sofia. Most of my time goes into the parts of software that sit close to the hardware: how memory gets handed out, what a program should do when it runs out, and what the processor is really doing with the code I write.
+I'm a systems programmer, and what I care about most is optimization, Systems for ML and ML for Systems. I like putting low-level knowledge, mathematics and machine learning together to build things that didn't exist before.
 
-Right now I work on systems programming in C, on ML for Systems, where systems software learns from its own behaviour which work is worth keeping, and on Systems for ML, where models train and run on machines without a GPU. I'm writing research papers on the ML for Systems side.
+I've built my own task queue engine, [Quicx](https://github.com/anastassow/Quicx), with its own memory allocator and its own protocol, and a CPU training library, [Sandokan](https://github.com/Molikano/Sandokan), tuned for speed. I've also worked on compilers, robotics and an optimized documentation engine, [ZDoc](https://github.com/IBM-SUMMER-PRACTICE-2026/ZDoc). Right now I'm writing research papers on ML for Systems, testing the ideas inside Quicx.
 
-I started Systems Society Bulgaria, a community for people here who like this kind of work.
+I founded Systems Society Bulgaria, a community for people who want to push systems programming further, into business, ML, reinforcement learning and quantum computing. That is where most of my interest is.
 
-Besides that I've worked on robotics and done a lot of performance tuning. I've also built websites and apps; it isn't the work I enjoy most, but I can do it properly.
+Before this I owned a service company and worked as a product owner. I can also build web, mobile and desktop apps and set up infrastructure and networks. It isn't my passion anymore, but it comes in handy.
 
 ### Skills
 
