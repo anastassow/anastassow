@@ -1,15 +1,30 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.png">
-  <img src="assets/banner-light.png" alt="Dimitar Anastasov: systems programming, ML for Systems and Systems for ML. Final-year student at TUES, founder of Systems Society Bulgaria." width="100%">
+  <img src="assets/banner-light.png" alt="Hi, I'm Dimitar Anastasov. Systems programmer: optimization, Systems for ML and ML for Systems. Final-year student at TUES, founder of System Society Bulgaria." width="100%">
 </picture>
 
-I'm a systems programmer, and what I care about most is optimization, Systems for ML and ML for Systems. I like putting low-level knowledge, mathematics and machine learning together to build things that didn't exist before.
+I'm a systems programmer. I like putting low-level knowledge, mathematics and machine learning together to build things that didn't exist before, and I'm writing research papers on ML for Systems, testing the ideas inside my own engine, Quicx.
 
-I've built my own task queue engine, [Quicx](https://github.com/anastassow/Quicx), with its own memory allocator and its own protocol, and a CPU training library, [Sandokan](https://github.com/Molikano/Sandokan), tuned for speed. I've also worked on compilers, robotics and an optimized documentation engine, [ZDoc](https://github.com/IBM-SUMMER-PRACTICE-2026/ZDoc). Right now I'm writing research papers on ML for Systems, testing the ideas inside Quicx.
+<img src="assets/cards/focus.png" width="100%" alt="What I do: optimization, Systems for ML, ML for Systems">
 
-I founded [Systems Society Bulgaria](https://linkedin.com/company/systems-society-bulgaria), a community for people who want to push systems programming further, into business, ML, reinforcement learning and quantum computing. That is where most of my interest is. Our events are on [Luma](https://luma.com/systems-society-bulgaria).
+### Things I've built
 
-Before this I owned a service company and worked as a product owner. I can also build web, mobile and desktop apps and set up infrastructure and networks. It isn't my passion anymore, but it comes in handy.
+<p>
+  <a href="https://github.com/anastassow/Quicx"><img src="assets/cards/quicx.png" width="49%" alt="Quicx: my own task queue engine, with my own memory allocator and protocol"></a>
+  <a href="https://github.com/Molikano/Sandokan"><img src="assets/cards/sandokan.png" width="49%" alt="Sandokan: a CPU training library for neural networks, tuned for speed"></a>
+  <a href="https://github.com/IBM-SUMMER-PRACTICE-2026/ZDoc"><img src="assets/cards/zdoc.png" width="49%" alt="ZDoc: an optimized documentation engine for mainframe and modern code"></a>
+  <img src="assets/cards/more.png" width="49%" alt="Also: compilers and robotics">
+</p>
+
+### Community
+
+<a href="https://linkedin.com/company/systems-society-bulgaria"><img src="assets/cards/ssb.png" width="100%" alt="Founder of System Society Bulgaria. Everything runs on systems. AI, quantum, and business are all built on them."></a>
+
+I founded System Society Bulgaria for people who want to take systems programming further, into business, ML, reinforcement learning and quantum computing. Follow it on [LinkedIn](https://linkedin.com/company/systems-society-bulgaria) and come to the events on [Luma](https://luma.com/systems-society-bulgaria).
+
+### Also
+
+Before all this I owned a service company and worked as a product owner. I can build web, mobile and desktop apps and set up infrastructure and networks too. It isn't my passion anymore, but it comes in handy.
 
 ### Skills
 
