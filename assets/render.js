@@ -6,6 +6,7 @@ const { chromium } = require('playwright-core');
   for (const f of process.argv.slice(2)) {
     await p.goto('file://' + f, { waitUntil: 'load' });
     await p.evaluate(() => document.fonts.ready);
+    await p.waitForFunction(() => document.body.dataset.ready === '1' || !document.querySelector('script'));
     await p.waitForTimeout(150);
     const el = await p.$('#c');
     await el.screenshot({ path: f.replace(/\.html$/, '.png'), omitBackground: true });

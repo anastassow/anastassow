@@ -29,6 +29,7 @@ from fontTools.ttLib import TTFont
 
 FONTS = os.path.expanduser("~/Desktop/SSB/phase3/Source-Files/Fonts-and-Licenses/Static")
 LOGO = os.path.expanduser("~/Desktop/SSB/phase3/Assets/Logo/Masters/SVG")
+ICONS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "icons")
 OUT = sys.argv[1] if len(sys.argv) > 1 else "build"
 os.makedirs(OUT, exist_ok=True)
 
@@ -43,6 +44,7 @@ FACES = {  # (family, weight) -> file
     ("Sofia Sans", 300): "SofiaSans-Light.ttf",
     ("Sofia Sans", 400): "SofiaSans-Regular.ttf",
     ("Sofia Sans", 500): "SofiaSans-Medium.ttf",
+    ("Sofia Sans", 700): "SofiaSans-Bold.ttf",
     ("Sofia Sans Semi Condensed", 500): "SofiaSansSemiCondensed-Medium.ttf",
 }
 _fonts = {}
@@ -94,6 +96,35 @@ def logo(version, x, y, height):
     return f'<g transform="translate({x} {y}) scale({height / 100})">{body}</g>'
 
 
+# Logos are fitted by their drawn bounds, not their 24 x 24 boxes, so that every mark has
+# its left edge on the column and sits centred on the row: height h, at most width maxw.
+FIT = """<script>
+document.fonts.ready.then(() => {
+  for (const g of document.querySelectorAll('g[data-mark]')) {
+    const art = g.firstElementChild, b = art.getBBox();
+    const [x, cy, h, maxw] = g.dataset.mark.split(' ').map(Number);
+    const k = Math.min(h / b.height, maxw / b.width);
+    g.setAttribute('transform', `translate(${x - b.x * k} ${cy - (b.y + b.height / 2) * k}) scale(${k})`);
+  }
+  document.body.dataset.ready = '1';
+});
+</script>"""
+
+
+def mark(icon, x, cy, h, maxw, color):
+    """A logo from assets/icons (Simple Icons), or text for marks that have no logo."""
+    if icon.startswith("text:"):        # set by its figure height h, placed by its baseline
+        word, size = icon[5:], h / 0.655
+        return (f'<text x="{x - lsb(word, size, "Sofia Sans", 700):.2f}" y="{cy + h / 2:.2f}" '
+                f'font-family="Sofia Sans" font-weight="700" font-size="{size:.2f}" '
+                f'fill="{color}">{html.escape(word)}</text>')
+    else:
+        svg = open(os.path.join(ICONS, icon + ".svg")).read()
+        d = svg[svg.index(' d="') + 4:]
+        art = f'<path d="{d[:d.index(chr(34))]}" fill="{color}"/>'
+    return f'<g data-mark="{x} {cy} {h} {maxw}">{art}</g>'
+
+
 def page(name, theme, w, h, inner, ground=True):
     """ground=False leaves the canvas transparent (render with OMIT=1); inner draws its own ground."""
     th = THEMES[theme]
@@ -103,7 +134,7 @@ def page(name, theme, w, h, inner, ground=True):
         f'<!doctype html><html><head><meta charset="utf-8"><style>{faces}'
         f'html,body{{margin:0}}text{{font-kerning:normal}}</style></head><body>'
         f'<svg id="c" xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}">'
-        f'{rect(0, 0, w, h, th["bg"]) if ground else ""}{inner}</svg></body></html>')
+        f'{rect(0, 0, w, h, th["bg"]) if ground else ""}{inner}</svg>{FIT}</body></html>')
 
 
 # --- banner: the LinkedIn composition. The statement in two lines broken by meaning;
@@ -183,35 +214,60 @@ def ssb(theme):
     page("ssb", theme, W, H, out)
 
 
-# --- skills and main technologies: separate facts in columns, a hairline between them
+# --- skills and main technologies: separate facts in columns, a hairline between them.
+# The technologies are one-colour logos, each with its word beneath (the SSB rule for icons).
+TECH = [("c", "C"), ("cplusplus", "C++"), ("text:x86", "Assembly"), ("arm", "Assembly"),
+        ("gnubash", "Bash"), ("python", "Python"), ("linux", "Linux"), ("apple", "macOS"),
+        ("raspberrypi", "Raspberry Pi"), ("git", "Git"), ("docker", "Docker")]
+
+
 def skills(theme):
     th, W, m = THEMES[theme], 1600, 50
     sc, cap, lead = 830 / W, 0.655, 56
-    rows = [
-        ("Skills", ["Mathematics, machine learning, optimization,",
-                    "systems programming, operating systems,",
-                    "microprocessor architecture,",
-                    "memory management, parallel computing"]),
-        ("Main technologies", ["C and C++, x86 and ARM assembly, Bash, Python,",
-                               "Linux, macOS, Raspberry Pi, Git, Docker"]),
-    ]
-    out, y = "", m
-    for i, (label, lines) in enumerate(rows):
-        if i:
-            out += rect(2 * m, y, W - 4 * m, 2, th["rule"])
-            y += m
-        first = y + cap * 44
-        out += text(2 * m, first, 38, label, th["fg2"], sc, 500, "Sofia Sans Semi Condensed")
-        for j, line in enumerate(lines):
-            out += text(9 * m, first + j * lead, 44, line, th["fg"], sc, limit=W - 2 * m)
-        y = first + (len(lines) - 1) * lead + 0.3 * 44 + m
-    page("skills", theme, W, round(y), out)
+    skill_lines = ["Mathematics, machine learning, optimization,",
+                   "systems programming, operating systems,",
+                   "microprocessor architecture,",
+                   "memory management, parallel computing"]
+    y = m
+    first = y + cap * 44
+    out = text(2 * m, first, 38, "Skills", th["fg2"], sc, 500, "Sofia Sans Semi Condensed")
+    for j, line in enumerate(skill_lines):
+        out += text(9 * m, first + j * lead, 44, line, th["fg"], sc, limit=W - 2 * m)
+    y = first + (len(skill_lines) - 1) * lead + 0.3 * 44 + m
+    out += rect(2 * m, y, W - 4 * m, 2, th["rule"])
+    y += m
+    out += text(2 * m, y + cap * 44, 38, "Main technologies", th["fg2"], sc, 500, "Sofia Sans Semi Condensed")
+    cols, cell, band, pitch = 6, 175, 60, 170      # 6 x 175 = 1050 = 450..1500
+    for k, (icon, word) in enumerate(TECH):
+        x, top = 9 * m + (k % cols) * cell, y + (k // cols) * pitch
+        h, maxw = {"arm": (30, 104), "text:x86": (40, 104)}.get(icon, (band, band))
+        out += mark(icon, x, top + band / 2, h, maxw, th["fg"])
+        out += text(x, top + band + 46, 30, word, th["fg2"], sc, 500, "Sofia Sans Semi Condensed",
+                    limit=x + cell - 16)
+    rows = (len(TECH) + cols - 1) // cols
+    y += (rows - 1) * pitch + band + 46 + 0.3 * 30 + m
+    page("skills-tech", theme, W, round(y), out)
+
+
+# --- closing strip: the LinkedIn mark at the height of a two-line block beside it
+# 1600 x 320 strip, m = 40; the text starts on the same 100 px margin as every other image.
+def contact(theme):
+    th, W, H = THEMES[theme], 1600, 320
+    sc, cap = 830 / W, 0.655
+    size_mark, top = 120, 100
+    out = mark("linkedin", 100, top + size_mark / 2, size_mark, size_mark, th["fg"])
+    x = 100 + size_mark + 48
+    out += text(x, top + cap * 80, 80, "Find me on LinkedIn", th["fg"], sc, 500, limit=W - 100)
+    out += text(x, top + size_mark, 44, "Write to me about systems, ML or System Society Bulgaria",
+                th["fg2"], sc, limit=W - 100)
+    page("contact", theme, W, H, out)
 
 
 for th in THEMES:
     banner(th)
     ssb(th)
     skills(th)
+    contact(th)
     for k, (name, num, label, title, lead, fact) in enumerate(TILES):
         tile(name, th, num, label, title, lead, fact, "left" if k % 2 == 0 else "right")
 

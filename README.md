@@ -20,10 +20,10 @@ I founded System Society Bulgaria for people who want to take systems programmin
 
 ### Skills and main technologies
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/skills-dark.png"><img src="assets/profile/skills-light.png" width="100%" alt="Skills: mathematics, machine learning, optimization, systems programming, operating systems, microprocessor architecture, memory management, parallel computing. Main technologies: C and C++, x86 and ARM assembly, Bash, Python, Linux, macOS, Raspberry Pi, Git, Docker."></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/skills-tech-dark.png"><img src="assets/profile/skills-tech-light.png" width="100%" alt="Skills: mathematics, machine learning, optimization, systems programming, operating systems, microprocessor architecture, memory management, parallel computing. Main technologies: C, C++, x86 assembly, ARM assembly, Bash, Python, Linux, macOS, Raspberry Pi, Git, Docker."></picture>
 
 ### Also
 
 Before all this I owned a service company and worked as a product owner. I can build web, mobile and desktop apps and set up infrastructure and networks too. It isn’t my passion anymore, but it comes in handy.
 
-You can find me on [LinkedIn](https://www.linkedin.com/in/dimitar-anastasov-339a94310/).
+<a href="https://www.linkedin.com/in/dimitar-anastasov-339a94310/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/contact-dark.png"><img src="assets/profile/contact-light.png" width="100%" alt="Find me on LinkedIn. Write to me about systems, ML or System Society Bulgaria."></picture></a>
