@@ -136,6 +136,7 @@ def outlined(word, colour, fig):
 
 TECH = [("c", "C", "c-original.svg"), ("cpp", "C++", "cplusplus-original.svg"),
         ("x86", "x86 assembly", None), ("arm", "ARM assembly", None),
+        ("cuda", "CUDA", None), ("mpi", "MPI", None),
         ("bash", "Bash", "bash-original.svg"), ("python", "Python", "python-original.svg"),
         ("linux", "Linux", "linux-original.svg"), ("macos", "macOS", "apple-original.svg"),
         ("linkedin", "LinkedIn", "linkedin-original.svg")]
@@ -146,6 +147,11 @@ for name, title, file in TECH:
     elif name == "arm":                            # Simple Icons wordmark in Arm's blue
         d = re.search(r' d="([^"]+)"', open(os.path.join(ICONS, "arm.svg")).read()).group(1)
         art = fitted_path(d, "#0091BD", 70, 30)
+    elif name == "cuda":                           # CUDA: Simple Icons NVIDIA mark in NVIDIA green
+        d = re.search(r' d="([^"]+)"', open(os.path.join(ICONS, "nvidia.svg")).read()).group(1)
+        art = fitted_path(d, "#76B900", 64, 44)
+    elif name == "mpi":                            # MPI has no logo: the word, in ink
+        art = outlined("MPI", INK, 26)
     else:
         art = devicon(file)
     plate(name, art, title)

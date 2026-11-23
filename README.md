@@ -70,12 +70,14 @@ I founded System Society Bulgaria for people who want to take systems programmin
 <img src="assets/tech/cpp.svg" width="48" title="C++" alt="C++">
 <img src="assets/tech/x86.svg" width="48" title="x86 assembly" alt="x86 assembly">
 <img src="assets/tech/arm.svg" width="48" title="ARM assembly" alt="ARM assembly">
+<img src="assets/tech/cuda.svg" width="48" title="CUDA" alt="CUDA">
+<img src="assets/tech/mpi.svg" width="48" title="MPI" alt="MPI">
 <img src="assets/tech/bash.svg" width="48" title="Bash" alt="Bash">
 <img src="assets/tech/python.svg" width="48" title="Python" alt="Python">
 <img src="assets/tech/linux.svg" width="48" title="Linux" alt="Linux">
 <img src="assets/tech/macos.svg" width="48" title="macOS" alt="macOS">
 <br>
-<sub>C, C++, x86 and ARM assembly, Bash, Python, Linux, macOS</sub>
+<sub>C, C++, x86 and ARM assembly, CUDA, MPI, Bash, Python, Linux, macOS</sub>
 </td>
 </tr>
 </table>
